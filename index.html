@@ -16,6 +16,13 @@
             color: #333;
         }
 
+        input {
+            padding: 8px;
+            margin: 8px;
+            width: 220px;
+            font-size: 14px;
+        }
+
         button {
             padding: 10px 25px;
             font-size: 16px;
@@ -24,6 +31,7 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            margin-top: 10px;
         }
 
         button:hover {
@@ -35,6 +43,15 @@
             font-size: 18px;
             font-weight: bold;
             color: #222;
+            white-space: pre-line;
+        }
+
+        .result.high {
+            color: #c62828;
+        }
+
+        .result.low {
+            color: #2e7d32;
         }
     </style>
 </head>
@@ -43,12 +60,22 @@
 
     <h1>Smart Traffic Prediction System</h1>
 
-    <p>Click the button below to predict traffic congestion level.</p>
+    <p>Enter details below to predict traffic congestion level.</p>
 
+    <!-- INPUT FIELDS (REQUIRED FOR script.js) -->
+    <input id="city" type="text" placeholder="City name"><br>
+
+    <input id="hour" type="number" min="0" max="23" placeholder="Hour (0–23)"><br>
+
+    <input id="traffic" type="number" placeholder="Traffic volume"><br>
+
+    <!-- BUTTON -->
     <button onclick="predict()">Predict Traffic</button>
 
+    <!-- RESULT -->
     <p id="result"></p>
 
+    <!-- SCRIPT -->
     <script src="script.js"></script>
 
 </body>
